@@ -15,6 +15,13 @@ jobs:
         run: |
           echo "Running Installing Dependencies"
           npm install
+
+      - name: Run linting
+        run:  |
+          echo "Running Linting Test..."
+          npm run lint
+        env:
+           CI: true
       
 
 
