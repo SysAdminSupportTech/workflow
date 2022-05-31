@@ -5,7 +5,7 @@ on:
 
 jobs:
   lintTest:
-    name: :Lint
+    name: Lint
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository in our runner
@@ -16,5 +16,5 @@ jobs:
           echo "Running Installing Dependencies"
           npm install
       
-      
+
 
