@@ -13,15 +13,6 @@ jobs:
     name: checking Syntax
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      
-      - name: Performing Important Checks
-        run: |
-          npm ci --ignore-scripts=false
-          npm run test:ci
-          npm run lint
-          npm run prettier:check
-          echo "Task completed..."
+      - name: checks
+        run:
+          echo "Welcome to yaml"
