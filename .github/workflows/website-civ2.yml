@@ -1,8 +1,9 @@
 name: Website_CI
 on: 
   push:
-    branches: 
-    - 'SLIIK**'
+    branches:
+      [master]
+   # - 'SLIIK**'
   
   pull_request:
     types: [opened, synchronize]
@@ -23,4 +24,4 @@ jobs:
           npm run test:ci
           npm run lint
           npm run prettier:check
-          echo "Task completed"
+          echo "Task completed..."
