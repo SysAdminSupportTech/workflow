@@ -1,0 +1,26 @@
+name: Website_CI
+on: 
+  push:
+    branches: 
+    - 'SLIIK**'
+  
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  code_checks:
+    name: checking Syntax
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/node@v3
+        with:
+          node-version: '14'
+      
+      - name: Performing Important Checks
+        run: |
+          npm ci --ignore-scripts=false
+          npm run test:ci
+          npm run lint
+          npm run prettier:check
+          echo "Task completed"
