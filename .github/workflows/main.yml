@@ -10,13 +10,39 @@ jobs:
     steps:
       - name: Clone repository in our runner
         uses: actions/checkout@v2
-        
+
+      - name: install Dependencies
+        run: |
+          echo "Running Installing Dependencies"
+          npm install
+
       - name: Run linting
         run:  |
           echo "Running Linting Test..."
           npm run lint
         env:
            CI: true
+
+  SecurittChecks:
+    name: Security SecurittChecks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: CheckSecurity
+        run: |
+          echo "Checking for Security"
+
+  #Run a test after a specific test has passed
+  deploy:
+    name: Deployment
+    runs-on: ubuntu-latest
+
+    needs: [LintTest, SecurittChecks]
+    steps:
+      - name: install Dependencies
+        run:  |
+          echo "Running Installing Dependencies..."
+          npm install
       
 
 
