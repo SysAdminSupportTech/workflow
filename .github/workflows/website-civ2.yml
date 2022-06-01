@@ -1,7 +1,8 @@
 name: Website_CI
 on: 
   push:
-    branches: 
+    branches:
+      [master]
     - 'SLIIK**'
   
   pull_request:
