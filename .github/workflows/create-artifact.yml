@@ -20,8 +20,7 @@ jobs:
             cd ..
         
         - name: Steps 3 - Add the artifacts to publish to the temp folder
-          run: | 
-            uses: actions/upload-artifact@v2
-            with: 
-              name: assests-for-download
-              path: downloads
+          uses: actions/upload-artifact@v2
+          with: 
+            name: assests-for-download
+            path: downloads
