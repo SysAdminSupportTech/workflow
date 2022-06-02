@@ -18,3 +18,4 @@ jobs:
             echo 'bravo' > bravo.html
             echo 'charlie' > charlie.html
             cd ..
+            pwd
